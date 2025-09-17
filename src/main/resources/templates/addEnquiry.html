@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Add Enquiry</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container-fluid">
+<h2>LogIn Form</h2>
+ <div class="d-block justify-content-center align-items-center vh-100 w-25">
+    <form th:action="@{/addenquiry}" th:object="${enqForm}" method="post">
+      <dl>
+        <dt>Student Name:</dt>
+        <dd><input type="text"  class="form-control" th:field="*{studentName}"></dd>
+        <dt>Contact:</dt>
+        <dd><input type="number" class="form-control" th:field="*{studentPhno}"></dd>
+        <dt>Class Mode:</dt>
+        <dd>
+            <select class="form-select" th:field="*{classMode}">
+            <option value="">--Select--</option>
+            <option value="classroom">Classroom</option>
+            <option value="online">Online</option>         
+            </select>
+        </dd>
+        <dt>Course Name:</dt>
+        <dd>
+           <select class="form-select" th:field="*{courseName}">
+            <option value="">--Select--</option> 
+            <option th:each="course : ${courseList}" th:value="${course}" th:text="${course}"></option>
+           </select>
+        </dd>
+        <dt>Enquiry Status:</dt>
+        <dd>
+          <select class="form-select" th:field="*{enquiryStatus}">
+            <option value="">--Select--</option>    
+            <option th:each="status : ${statusList}" th:value="${status}" th:text="${status}"></option>
+           </select>
+        </dd>
+      </dl>
+        <button type="submit" class="btn btn-success">Log In</button>
+    </form>
+     <h6 th:text = ${SuccessMsg} class="text-success"></h6>
+     <h6 th:text = ${ErrorMsg} class="text-danger"></h6>
+     <a th:href="@{/viewenquiry}" class="btn btn-danger">View Inquiry</a>
+</div>
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" ></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Forgot Password</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container-fluid">
+  <div class="d-block justify-content-center align-items-center vh-100">
+   <form th:action="@{/forgotPwd}" method="post">
+      <dl>
+        <dt>Email:</dt>
+        <dd><input type="email"  class="form-input" name="email"></dd>
+      </dl>
+        <button type="submit" class="btn btn-success">Get Password</button>
+    </form>
+    <h6 th:text = ${SuccessMsg} class="text-success"></h6>
+    <h6 th:text = ${ErrorMsg} class="text-danger"></h6>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" ></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Dash-board</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container-fluid">
+ <div class="d-flex justify-content-center align-items-center vh-100">
+ <div> 
+  <div class="m-2 p-2">
+    <a th:href="@{/addenquiry}" class="btn btn-primary">Add Enquiry</a>
+  </div> 
+  <div class="m-2 p-2">
+    <a th:href="@{/viewenquiry}" class="btn btn-primary">View Enquiry</a>
+  </div>
+ </div>
+ <div>
+   <h2>DashBoard Page</h2>
+   <dl>
+   <dt>Total Count:</dt>
+   <dd th:text = ${dashboardResponse.totalEnq}></dd>
+   <dt>Enrolled:</dt>
+   <dd th:text = ${dashboardResponse.enrolledEnq}></dd>
+   <dt>Lost:</dt>
+   <dd th:text = ${dashboardResponse.lostEnq}></dd>
+   </dl>
+ </div>
+ <div>
+   <h5><a th:href="@{/logout}" class="btn btn-danger">Log Out</a></h5>
+ </div>
+</div>  
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" ></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Unlock account</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container-fluid">
+<div class="d-block justify-content-center align-items-center vh-100">
+ <h2>Unlock Your Account</h2>  
+    <form th:action="@{/unlock}" th:object="${unlock}" method="POST">
+        Your Email:<h4 th:text = ${unlock.email}></h4>
+        <input type="hidden" th:field="*{email}">
+        <dl>
+        <dt>Generated Password</dt>
+        <dd><input type="text" th:field="*{genPwd}"></dd>
+
+        <dt>New Password</dt>
+        <dd><input type="password" th:field="*{newPwd}"></dd>
+
+        <dt>Confirm Password</dt>
+        <dd><input type="password" th:field="*{confirmPwd}"></dd>
+        </dl>
+        <button type="submit" class="btn btn-danger">Unlock</button>    
+    </form>
+     <h6 th:text = ${SuccessMsg} class="text-success"></h6>
+     <h6 th:text = ${ErrorMsg1} class="text-danger"></h6>
+     <h6 th:text = ${ErrorMsg2} class="text-danger"></h6>
+ </div>
+   
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" ></script>
+</body>
+</html>
