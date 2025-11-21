@@ -6,10 +6,10 @@ This project follows a clean MVC architecture and is suitable for enterprise, of
 ---
 
 ## 🚀 Features
-   Query Scheduling
-   Staff Directory Integration
-   UI using Thymeleaf
-   Modular MVC architecture
+  - Query Scheduling
+  - Staff Directory Integration
+  - UI using Thymeleaf
+  - Modular MVC architecture
 
 🛠️ Easy to extend and integrate with databases or APIs
 ---
